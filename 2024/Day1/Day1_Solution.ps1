@@ -29,6 +29,6 @@ function Get-Answer {
     return $Summ
 }
 
-$Inputs = Get-Content -Path ./Day1_Inputs.txt -Raw
+$Inputs = Get-Content -Path "$PSScriptRoot/Day1_Inputs.txt" -Raw
 
 Get-Answer -InputData $Inputs
