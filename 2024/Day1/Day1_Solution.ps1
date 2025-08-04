@@ -1,4 +1,5 @@
-# https://adventofcode.com/2024/day/1
+# link: https://adventofcode.com/2024/day/1
+# meta: {year:2024,day:1,part:1,name:"Historian Hysteria",state:solved}
 
 function Get-Answer {
     [CmdletBinding()]
@@ -7,17 +8,17 @@ function Get-Answer {
         [String]
         $InputData
     )
-    
+
     $ValuePairs = $InputData.Split("`r`n")
     
     $Lefts = @()
     $Rights = @()
-    
+
     foreach ($ValuePair in $ValuePairs) {
         $Lefts += $ValuePair.Split("   ")[0]
         $Rights += $ValuePair.Split("   ")[1]
     }
-    
+
     $Lefts = $Lefts | Sort-Object
     $Rights = $Rights | Sort-Object
     
@@ -25,7 +26,7 @@ function Get-Answer {
     for ($i = 0; $i -lt $Lefts.Count; $i++) {
         $Summ += [Math]::Abs($Lefts[$i] - $Rights[$i])
     }
-    
+
     return $Summ
 }
 

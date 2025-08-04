@@ -1,4 +1,5 @@
-# https://adventofcode.com/2015/day/2
+# link: https://adventofcode.com/2015/day/2
+# meta: {year:2015,day:2,part:1,name:"I Was Told There Would Be No Math",state:solved}
 
 function Get-Answer {
     [CmdletBinding()]
@@ -23,7 +24,6 @@ function Get-Answer {
             $this.Length, $this.Width, $this.Height | Sort-Object | Select-Object -First 2 | ForEach-Object { $this.SmallestSide *= $_ }
             $this.SurfaceArea = (2 * $this.Length * $this.Width) + (2 * $this.Width * $this.Height) + (2 * $this.Height * $this.Length) + $this.SmallestSide
         }
-
     }
 
     $Boxes = @()
