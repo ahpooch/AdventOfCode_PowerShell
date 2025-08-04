@@ -16,7 +16,7 @@ function Get-Answer {
         OneHorseOpenSleigh () {
             $this.Visited += @{x = 0; y = 0 }
         }
-        
+
         [void] Move([String] $Direction) {
             switch ($Direction) {
                 '^' { $this.y += 1 }
@@ -30,11 +30,22 @@ function Get-Answer {
     }
 
     $SantaSleigh = New-Object OneHorseOpenSleigh
+    $RoboSantaSleigh = New-Object OneHorseOpenSleigh
+
+    $isRoboSantaTurn = $false
+
     foreach ($Move in [char[]] $InputData) {
-        $SantaSleigh.Move($Move)
+        if (-not $isRoboSantaTurn) {
+            $SantaSleigh.Move($Move)
+            $isRoboSantaTurn = $true
+        } else {
+            $RoboSantaSleigh.Move($Move)
+            $isRoboSantaTurn = $false
+        }
     }
 
-    return ($SantaSleigh.Visited | Select-Object -Unique x,y).Count
+    $VisitedInTotal = ($SantaSleigh.Visited | Select-Object -Unique x,y) + ($RoboSantaSleigh.Visited | Select-Object -Unique x,y)
+    return ($VisitedInTotal | Select-Object -Unique x,y).Count
 }
 
 $Inputs = Get-Content -Path "$PSScriptRoot\Day3_Inputs.txt" -Raw
