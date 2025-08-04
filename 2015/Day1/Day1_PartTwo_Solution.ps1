@@ -1,5 +1,5 @@
 # link: https://adventofcode.com/2015/day/1#part2
-# meta: {year:2015,day:1,part:2,name:"Not Quite Lisp",state:solved}
+# meta: {year:2015,day:1,part:2,name:"Not Quite Lisp",state:"solved"}
 
 function Get-Answer {
     [CmdletBinding()]

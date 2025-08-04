@@ -1,5 +1,5 @@
 # link: https://adventofcode.com/2015/day/3
-# meta: {year:2015,day:3,part:2,name:"Perfectly Spherical Houses in a Vacuum",state:solved}
+# meta: {year:2015,day:3,part:2,name:"Perfectly Spherical Houses in a Vacuum",state:"solved"}
 
 function Get-Answer {
     [CmdletBinding()]

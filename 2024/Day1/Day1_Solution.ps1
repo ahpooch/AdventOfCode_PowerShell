@@ -1,5 +1,5 @@
 # link: https://adventofcode.com/2024/day/1
-# meta: {year:2024,day:1,part:1,name:"Historian Hysteria",state:solved}
+# meta: {year:2024,day:1,part:1,name:"Historian Hysteria",state:"solved"}
 
 function Get-Answer {
     [CmdletBinding()]

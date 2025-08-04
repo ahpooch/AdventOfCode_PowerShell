@@ -1,5 +1,5 @@
 # link: https://adventofcode.com/2015/day/2
-# meta: {year:2015,day:2,part:1,name:"I Was Told There Would Be No Math",state:solved}
+# meta: {year:2015,day:2,part:1,name:"I Was Told There Would Be No Math",state:"solved"}
 
 function Get-Answer {
     [CmdletBinding()]
