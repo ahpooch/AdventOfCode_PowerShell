@@ -14,7 +14,7 @@ function Get-Answer {
         [int] $Height
         [int] $SmallestSide
         [int] $SurfaceArea
-    
+
         Box([string] $Dimentions) {
             $this.Length = $Dimentions.split("x")[0]
             $this.Width = $Dimentions.split("x")[1]
@@ -23,14 +23,14 @@ function Get-Answer {
             $this.Length, $this.Width, $this.Height | Sort-Object | Select-Object -First 2 | ForEach-Object { $this.SmallestSide *= $_ }
             $this.SurfaceArea = (2 * $this.Length * $this.Width) + (2 * $this.Width * $this.Height) + (2 * $this.Height * $this.Length) + $this.SmallestSide
         }
-    
+
     }
 
     $Boxes = @()
     foreach ($Data in $InputData.Split("`r`n")) {
         $Boxes += New-Object Box $Data
     }
-    
+
     return ($Boxes.SurfaceArea | Measure-Object -Sum).Sum
 }
 
